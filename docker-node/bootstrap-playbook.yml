@@ -1,0 +1,7 @@
+---
+- hosts: all
+  remote_user: vagrant
+  become: true
+  roles: 
+    - ../ansible/roles/docker
+    - ../ansible/roles/aws-cli

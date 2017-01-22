@@ -1,0 +1,4 @@
+ubuntu_version: xenial
+release: main
+docker_user: vagrant
+docker_compose_version: 1.10.0

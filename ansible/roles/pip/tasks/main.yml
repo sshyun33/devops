@@ -1,0 +1,6 @@
+- name: Pip package is present
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - python-pip

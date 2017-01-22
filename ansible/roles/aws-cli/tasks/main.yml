@@ -1,0 +1,4 @@
+- name: aws-cli pip module is present
+  pip:
+    name: awscli
+    executable: pip2

@@ -1,0 +1,6 @@
+- name: common package are present
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+      - git
