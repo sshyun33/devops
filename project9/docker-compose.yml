@@ -19,12 +19,12 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./db-data:/var/lib/mysql
-    #networks:
-    #restart: always
+      - dbdata:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: team
       MYSQL_DATABASE: project9
       MYSQL_USER: team
       MYSQL_PASSWORD: team
 
+volumes:
+  dbdata:
