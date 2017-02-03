@@ -3,15 +3,12 @@ version: '3'
 services:
 
   proxy:
-    image: nginx:1.11.8-alpine
+    build: ./nginx
+    image: project9_proxy:1.0
     container_name: project9_proxy
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
-      - "./nginx/conf.d:/etc/nginx/conf.d"
-      - "./nginx/ssl:/etc/nginx/ssl"
     depends_on:
       - app
 
@@ -26,12 +23,9 @@ services:
       - db
 
   db:
-    image: mariadb:10.1.20
+    build: ./mariadb 
+    image: project9_db:1.0
     container_name: project9_db
-    volumes:
-      - "./mariadb/config:/etc/mysql/conf.d"
-      - "./mariadb/sql:/docker-entrypoint-initdb.d"
-      - "dbdata:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: team
       MYSQL_DATABASE: project9
