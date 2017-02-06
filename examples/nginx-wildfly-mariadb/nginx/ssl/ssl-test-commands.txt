@@ -1,0 +1,13 @@
+# 1. Testing HSTS
+Commands: curl -s -D- https://domain.com/ | grep Strict
+Expected: Strict-Transport-Security: max-age=...
+
+# 2. Testing OCSP Stapling
+Commands: openssl s_client -connect domain.com:443 -tls1 -tlsextdebug -status
+Expected:
+OCSP response:
+======================================
+OCSP Response Data:
+    OCSP Response Status: successful (0x0)
+    Response Type: Basic OCSP Response
+...(omitted)
