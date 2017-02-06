@@ -1,2 +1,7 @@
-db-data
 .vagrant
+*.war
+*.jar
+*.crt
+*.key
+*.pem
+
