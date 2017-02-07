@@ -1,7 +1,6 @@
 FROM jboss/wildfly:10.1.0.Final
 
-ENV USER team
-ENV GROUP team
+ENV USER=team GROUP=team
 
 RUN /opt/jboss/wildfly/bin/add-user.sh ${USER} ${GROUP} --silent
 

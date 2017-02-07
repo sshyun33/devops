@@ -12,7 +12,11 @@ mkdir -p ${KEY_FILE%/*};
 chmod 700 ${KEY_FILE%/*}
 
 # Create a self-signed key and certificate pair
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ${KEY_FILE} -out ${CERT_FILE}
+if [[ ! -r ${KEY_FILE} ]]; then
+  openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ${KEY_FILE} -out ${CERT_FILE}
+fi
 
 # Create Diffie-Hellman parameter
-openssl dhparam -out ${DHPARAM_FILE} 2048
+if [[ ! -r  ${DHPARAM_FILE} ]]; then
+  openssl dhparam -out ${DHPARAM_FILE} 2048
+fi
