@@ -2,7 +2,7 @@
 
 # Define variables
 DOMAIN=project9.rohaky.com
-CERT_FILE=./certs/${DOMAIN}.fullchain.crt
+CERT_FILE=./certs/${DOMAIN}.crt
 KEY_FILE=./private/${DOMAIN}.key
 DHPARAM_FILE=./certs/dhparam-2048.pem
 

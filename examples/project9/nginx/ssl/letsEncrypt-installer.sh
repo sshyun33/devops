@@ -20,9 +20,9 @@ fi
 # Copy certificate and key
 if [[ -d /etc/letsencrypt ]]; then
   sudo cp -a /etc/letsencrypt/archive/${DOMAIN}/fullchain1.pem \
-certs/${DOMAIN}.fullchain.crt
+certs/${CERT_FILE}
   sudo cp -a /etc/letsencrypt/archive/${DOMAIN}/privkey1.pem \
-private/${DOMAIN}.key
+private/${KEY_FILE}
 fi
 
 # Create Diffie-Hellman parameter
