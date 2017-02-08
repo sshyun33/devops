@@ -2,7 +2,7 @@
 
 # Define variables
 DOMAIN=project9.rohaky.com
-CERT_FILE=./certs/${DOMAIN}.crt
+CERT_FILE=./certs/${DOMAIN}.fullchain.crt
 KEY_FILE=./private/${DOMAIN}.key
 DHPARAM_FILE=./certs/dhparam-2048.pem
 
@@ -19,10 +19,8 @@ fi
 
 # Copy certificate and key
 if [[ -d /etc/letsencrypt ]]; then
-  sudo cp -a /etc/letsencrypt/archive/${DOMAIN}/fullchain1.pem \
-certs/${CERT_FILE}
-  sudo cp -a /etc/letsencrypt/archive/${DOMAIN}/privkey1.pem \
-private/${KEY_FILE}
+  sudo cp -a /etc/letsencrypt/archive/${DOMAIN}/fullchain1.pem ${CERT_FILE}
+  sudo cp -a /etc/letsencrypt/archive/${DOMAIN}/privkey1.pem ${KEY_FILE}
 fi
 
 # Create Diffie-Hellman parameter
