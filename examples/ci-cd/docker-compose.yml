@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  jenkins:
+    image: jenkins:alpine
+    ports:
+      - "8888:8080"
+      - "50000:50000" 
+    volumes:
+      - "jenkins-data:/var/jenkins_home"
+    depends_on:
+      - nexus
+
+  nexus:
+    image: sonatype/nexus3
+    ports:
+      - "8081:8081"
+    volumes:
+      - "nexus-data:/nexus-data"
+
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - 'registry-data:/var/lib/registry'
+     
+
+volumes:
+  jenkins-data: 
+  nexus-data:
+  registry-data:
