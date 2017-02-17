@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  tomcat85:
+    build: .
+    image: my/tomcat:8.5.11-jre8-alpine
+    container_name: tomcat85 
+    ports:
+      - 8080:8080
