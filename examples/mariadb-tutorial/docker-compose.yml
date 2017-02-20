@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  db:
+    build: .
+    image: mariadb:tutorial
+    container_name: mariadb-tutorial
+    environment:
+      MYSQL_DATABASE: employees
+      MYSQL_ROOT_PASSWORD: team
+      MYSQL_USER: team
+      MYSQL_PASSWORD: team

@@ -5,3 +5,15 @@
 *.key
 *.pem
 
+### examples/mariadb-tutorial ###
+employees_db
+
+### Binary ###
+*.war
+*.jar
+!gralde-wrapper.jar
+*.zip
+*.tar
+*.tar.xz
+*.tar.bz2
+
