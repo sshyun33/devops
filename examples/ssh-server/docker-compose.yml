@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  ssh-server:
+    build: .
+    image: ssh-server
+    container_name: ssh-server
+    ports:
+      - "2222:22"

@@ -17,3 +17,7 @@ employees_db
 *.tar.xz
 *.tar.bz2
 
+examples/ssh-server/data/*
+!examples/ssh-server/data/.keep
+
+
