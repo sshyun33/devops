@@ -8,6 +8,8 @@ services:
     container_name: nginx
     ports:
       - "80:80"
+    volumes:
+      - "./nginx/html:/usr/share/nginx/html"
 
   tomcat:
     build: ./tomcat
@@ -22,8 +24,13 @@ services:
     container_name: mariadb
     ports:
       - "3306:3306"
+    volumes:
+      - "dbdata:/var/lib/mysql"
     environment:
       MYSQL_DATABASE: test
       MYSQL_ROOT_PASSWORD: test
       MYSQL_USER: test
       MYSQL_PASSWORD: test
+
+volumes:
+  dbdata:
