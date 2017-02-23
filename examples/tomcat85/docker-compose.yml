@@ -6,4 +6,4 @@ services:
     image: my/tomcat:8.5.11-jre8-alpine
     container_name: tomcat85 
     ports:
-      - 8080:8080
+      - "8080:8080"
