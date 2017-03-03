@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  haproxy:
+    build: .
+    image: sanbsd/haproxy:1.0
+    container_name: haproxy
+    ports:
+      - 80:80
