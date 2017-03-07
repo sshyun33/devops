@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  jenkins:
+    image: jenkins:alpine
+    ports:
+      - "8888:8080"
+      - "50000:50000" 
+    volumes:
+      - "jenkins-data:/var/jenkins_home"
+
+volumes:
+  jenkins-data: 
