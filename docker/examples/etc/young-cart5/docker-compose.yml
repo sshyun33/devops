@@ -2,21 +2,21 @@ version: '3'
 
 services:
 
-  nginx-php:
+  yc5-app:
     build: ./nginx-php
-    image: my/nginx-php
-    container_name: nginx-php
+    image: my/yc5-app:5.0
+    container_name: yc5-app
     ports:
       - "80:80"
     volumes:
       - "web-data:/usr/share/nginx/html/data"
     depends_on:
-      - mysql
+      - yc5-db
 
-  mysql:
+  yc5-db:
     build: ./mysql
-    image: my/mysql:5.5.54
-    container_name: mysql 
+    image: my/yc5-db:5.5.54
+    container_name: yc5-db
     ports:
       - "3306:3306"
     volumes:

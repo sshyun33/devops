@@ -15,6 +15,7 @@ employees_db
 *.zip
 *.tar
 *.tar.xz
+*.tar.gz
 *.tar.bz2
 
 examples/ssh-server/data/*
