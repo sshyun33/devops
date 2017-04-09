@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  nginx-php:
+    build: ./nginx-php
+    image: my/nginx-php
+    container_name: nginx-php
+    ports:
+      - "80:80"
+    volumes:
+      - "web-data:/usr/share/nginx/html/data"
+    depends_on:
+      - mysql
+
+  mysql:
+    build: ./mysql
+    image: my/mysql:5.5.54
+    container_name: mysql 
+    ports:
+      - "3306:3306"
+    volumes:
+      - "db-data:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: yc5
+      MYSQL_ROOT_PASSWORD: team
+      MYSQL_USER: team
+      MYSQL_PASSWORD: team
+
+volumes:
+  web-data: 
+  db-data:
